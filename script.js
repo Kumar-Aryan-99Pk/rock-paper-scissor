@@ -13,18 +13,14 @@ function getComputerChoice(){
 function getHumanChoice() {
     buttons.forEach(button => {
         button.addEventListener("click", () => {
-            let humanChoice = button.textContent.toLowerCase();
+            let humanChoice = button.dataset.choice.toLowerCase();
+            console.log(humanChoice);
             let computerChoice = getComputerChoice();
             playRound(computerChoice, humanChoice);
         });
     });
 }
 function playRound(computerChoice,humanChoice){
-    if(rounds>=maxRound){
-        humanScore=0;
-        computerScore=0;
-        rounds=0;
-    }
     let compchoice=document.querySelector(".computer-choice");
     let result=document.querySelector(".result")
     compchoice.textContent=`Computer chose ${computerChoice}`
@@ -52,6 +48,9 @@ function playRound(computerChoice,humanChoice){
     rounds++;
     if(rounds>=maxRound){
         declareWinner();
+        humanScore = 0;
+        computerScore = 0;
+        rounds = 0;
     }
 
 }
