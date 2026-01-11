@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <div class="score">
+            <div class="player-score">Player Score</div>
+            <div class="computer-score">Computer Score</div>
+        </div>
+        <div class="player-area">
+            <button data-choice="rock">👊</button>
+            <button data-choice="paper">✋</button>
+            <button data-choice="scissor">✌️</button>
+        </div>
+        <div class="computer-area">
+            <div class="computer-choice">Computer Chose Rock</div>
+            <div class="result">You Won</div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
