@@ -13,6 +13,7 @@ function getComputerChoice(){
 function getHumanChoice() {
     buttons.forEach(button => {
         button.addEventListener("click", () => {
+            if (rounds >= maxRound) return;
             let humanChoice = button.dataset.choice.toLowerCase();
             console.log(humanChoice);
             let computerChoice = getComputerChoice();
@@ -48,9 +49,6 @@ function playRound(computerChoice,humanChoice){
     rounds++;
     if(rounds>=maxRound){
         declareWinner();
-        humanScore = 0;
-        computerScore = 0;
-        rounds = 0;
     }
 
 }
@@ -63,6 +61,14 @@ function declareWinner() {
     } else {
         finalResult.textContent = "It's a tie overall!";
     }
+    // setTimeout(()=>{
+    //     rounds=0;
+    //     humanScore=0;
+    //     computerScore=0;
+    // },2000);
+     buttons.forEach(button => {
+        button.disabled = true;
+    });
 
 }
 
